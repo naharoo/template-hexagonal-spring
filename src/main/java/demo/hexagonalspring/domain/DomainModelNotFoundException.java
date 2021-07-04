@@ -1,20 +1,23 @@
 package demo.hexagonalspring.domain;
 
+import static demo.hexagonalspring.config.WebProblemConfiguration.ProblemTitle.RESOURCE_NOT_FOUND;
 import static java.lang.String.format;
 import static org.springframework.util.StringUtils.hasText;
 
-import lombok.Getter;
+import org.zalando.problem.AbstractThrowableProblem;
+import org.zalando.problem.Status;
 
-public class DomainModelNotFoundException extends RuntimeException {
+public class DomainModelNotFoundException extends AbstractThrowableProblem {
 
   private static final String MESSAGE_TEMPLATE_WITH_IDENTIFIER = "No %s can be found by given %s.";
   private static final String MESSAGE_TEMPLATE_WITHOUT_IDENTIFIER = "No %s can be found.";
 
-  @Getter private final Class<?> resourceClass;
-
   public DomainModelNotFoundException(final Class<?> resourceClass, final String identifier) {
-    super(formatMessage(resourceClass, identifier));
-    this.resourceClass = resourceClass;
+    super(
+        null,
+        RESOURCE_NOT_FOUND.name(),
+        Status.NOT_FOUND,
+        formatMessage(resourceClass, identifier));
   }
 
   public DomainModelNotFoundException(final Class<?> resourceClass) {

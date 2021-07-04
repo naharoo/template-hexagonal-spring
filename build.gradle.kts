@@ -42,6 +42,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.mapstruct:mapstruct:1.4.1.Final")
     implementation("com.naharoo.commons:mapstruct-facade-spring-boot-starter:1.4.0")
+    implementation("org.zalando:problem-spring-web:0.26.2")
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.flywaydb:flyway-core")
 
