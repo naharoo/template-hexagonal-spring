@@ -5,8 +5,4 @@ import demo.hexagonalspring.domain.user.User;
 import org.mapstruct.Mapper;
 
 @Mapper
-public interface UserDtoMapper extends UnidirectionalMapper<User, UserDto> {
-
-  @Override
-  UserDto map(User source);
-}
+public interface UserDtoMapper extends UnidirectionalMapper<User, UserDto> {}

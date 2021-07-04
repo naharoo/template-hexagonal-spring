@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<FindBugsFilter>-->
+
+  <Match>
+    <Or>
+      <Bug pattern="EI_EXPOSE_REP"/>
+      <Bug pattern="EI_EXPOSE_REP2"/>
+      <Bug pattern="ES_COMPARING_PARAMETER_STRING_WITH_EQ"/>
+    </Or>
+  </Match>
+
+</FindBugsFilter>
